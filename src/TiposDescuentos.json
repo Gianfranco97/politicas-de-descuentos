@@ -1,0 +1,103 @@
+[
+    {
+      "nombre": "Descuento plano",
+      "campos": [
+        {
+          "nombre": "descuentoPlano",
+          "label": "Indique un porcentaje de descuento",
+          "valor": 0,
+          "propsAdicionales": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]   
+    },
+    {
+      "nombre": "Compra minima",
+      "campos": [
+        {
+          "nombre": "compraMinima",
+          "label": "Cual es el minimo nesario de productos",
+          "valor": 1,
+          "propsAdicionales": {
+            "min": 1
+          }
+        },
+        {
+          "nombre": "compraMinima-descuento",
+          "label": "Cual es el descuento a aplicar",
+          "valor": 0,
+          "propsAdicionales": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Compra maxima",
+      "campos": [
+        {
+          "nombre": "compraMaxima",
+          "label": "Cual es el maximo de productos",
+          "valor": 1,
+          "propsAdicionales": {
+            "min": 1
+          }
+        },
+        {
+          "nombre": "compraMaxima-descuento",
+          "label": "Cual es el descuento a aplicar",
+          "valor": 0,
+          "propsAdicionales": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Gasto minimo",
+      "campos": [
+        {
+          "nombre": "gastoMinimo",
+          "label": "Cual es el gasto nesario para aplicar el descuento",
+          "valor": 1,
+          "propsAdicionales": {
+            "min": 0
+          }
+        },
+        {
+          "nombre": "gastoMinimo-descuento",
+          "label": "Cual es el descuento a aplicar",
+          "valor": 0,
+          "propsAdicionales": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Gasto maximo",
+      "campos": [
+        {
+          "nombre": "gastoMaximo",
+          "label": "Cual es el gasto nesario para aplicar el descuento",
+          "valor": 1,
+          "propsAdicionales": {
+            "min": 1
+          }
+        },
+        {
+          "nombre": "gastoMaximo-descuento",
+          "label": "Cual es el descuento a aplicar",
+          "valor": 0,
+          "propsAdicionales": {
+            "min": 0
+          }
+        }
+      ]
+    }
+]
