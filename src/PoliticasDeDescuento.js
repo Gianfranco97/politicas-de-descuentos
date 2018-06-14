@@ -10,14 +10,12 @@ class PoliticasDeDescuento extends Component {
                 const descuento = this.props.descuentos[key]
                 descuentos.push(
                     <li key={`descuentoAplicado-${key}`}>
-                        <button onClick={() => this.props.eliminarDescuento(this.props.nombre, key)}>
-                        -
-                        </button>
                         <Descuento 
                             nombre={key}
                             descuento={descuento}
                             politica={this.props.nombre}
                             editarDescuento={this.props.editarDescuento}
+                            eliminarDescuento={this.props.eliminarDescuento}
                         />
                     </li>
                 )
@@ -25,6 +23,11 @@ class PoliticasDeDescuento extends Component {
         }
         return (
             <ul className="lista-descuentos">
+                {
+                    descuentos.length > 0 ? 
+                        <h4>Lista de descuentos aplicados</h4>
+                        : null
+                }
                 { descuentos }
             </ul>
         )
@@ -36,9 +39,15 @@ class PoliticasDeDescuento extends Component {
                 {
                     TiposDescuentos.map((descuento, index) => {
                         return (
-                            <li key={`descuento-${index}`}>
+                            <li key={`descuento-${index}`} style={{margin: '10px 20px'}}>
+                                <span 
+                                    className="button tiny" 
+                                    style={{margin: '0px 20px 5px'}}
+                                    onClick={() => this.props.agregarDescuento(this.props.nombre, descuento)}
+                                >
+                                +
+                                </span>
                                 {descuento.nombre} 
-                                <span onClick={() => this.props.agregarDescuento(this.props.nombre, descuento)}>+</span>
                             </li>
                         )
                     })
@@ -50,10 +59,18 @@ class PoliticasDeDescuento extends Component {
     render() {
         return (
             <div className="politicas-de-descuento">
-                <h3> {this.props.nombre} </h3>
+                <h3> 
+                    <button 
+                        style={{margin: '0 20px'}} 
+                        className="button alert tiny" 
+                        onClick={() => this.props.eliminarPolitica(this.props.nombre)}
+                    >
+                        x
+                    </button>
+                    {this.props.nombre} 
+                </h3>
                 <h4>Lista de posibles descuentos</h4>
                 { this.listaDePosiblesDescuentos() }
-                <h4>Lista de descuentos aplicados</h4>
                 { this.listaDeDescuentosAplicados() }
             </div>
         )

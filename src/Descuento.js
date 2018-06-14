@@ -4,7 +4,16 @@ class Descuento extends Component {
     render() {
       return (
         <div className="descuento">
-            <p>{this.props.nombre}</p>
+            <p>
+              <button 
+                className="button alert tiny" 
+                style={{margin: '5px'}}
+                onClick={() => this.props.eliminarDescuento(this.props.politica, this.props.nombre)}
+              >
+                x
+              </button>
+              {this.props.nombre}
+            </p>
             {
               this.props.descuento.campos.map((campo, index) => {
                 return (

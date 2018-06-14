@@ -64,15 +64,13 @@ class App extends Component {
         const politica = this.state.politicasDeDescuento[key]
         lista.push(
           <React.Fragment key={key}>
-            <button onClick={() => this.eliminarPolitica(key)}>
-              -
-            </button>
             <PoliticasDeDescuento 
               nombre={key} 
               descuentos={politica} 
               agregarDescuento={this.agregarDescuento} 
               editarDescuento={this.editarDescuento}
               eliminarDescuento={this.eliminarDescuento} 
+              eliminarPolitica={this.eliminarPolitica}
             />
           </React.Fragment>
         )
@@ -146,7 +144,7 @@ class App extends Component {
     }, {})
   }
 
-  eliminarPolitica(politica) {
+  eliminarPolitica = (politica) => {
     this.setState({
       politicasDeDescuento: this.removerPropiedad(this.state.politicasDeDescuento, politica)
     })
@@ -170,7 +168,7 @@ class App extends Component {
         <div className="App-content">
           <h2>Mis politicas de descuento</h2>
           { this.listaDePoliticas() }
-          <button onClick={this.agregarPoliticaDeDescuento}>
+          <button className="button" onClick={this.agregarPoliticaDeDescuento}>
             Agregar nueva politica
           </button>
           <h2>Lista de productos</h2>
