@@ -76,7 +76,7 @@ class Totales extends Component {
                 lista.push(
                     <React.Fragment key={`total-${key}`}>
                         <h3>{key}</h3>
-                        <p>Total a pagar: {this.aplicarDescuento(this.props.politicasDeDescuento[key]).precio}</p>
+                        <p>Total a pagar: {this.aplicarDescuento(this.props.politicasDeDescuento[key]).precio}  BsS.</p>
                     </React.Fragment>
                 )
             }
@@ -87,7 +87,7 @@ class Totales extends Component {
     render() {
         return (
             <React.Fragment>
-                <h3>Total: {this.totalesProductos().precio}</h3>
+                <h3>Total: {this.totalesProductos().precio}  BsS.</h3>
                 {this.listaDeTotales()}
             </React.Fragment>
         )
